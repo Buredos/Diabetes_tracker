@@ -22,7 +22,7 @@ class Home extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.fromLTRB(20.0, 275.0, 20.0, 20.0),
               child: Text(
-               'Welcome to Diabetic inMe!',
+               'Welcome to Diabetic inMe!!!',
                 textAlign: TextAlign.center,
 
                style: TextStyle(
