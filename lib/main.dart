@@ -16,16 +16,36 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.blue[900],
       ),
-      body: Center(
-          child: Text(
-              'Welcome to Diabetic inMe!',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20.0,
-              letterSpacing: 2.0,
-              color: Colors.grey[800],
+      body: Column(
+        children: <Widget>[
+          Center(
+            child: Container(
+              padding: EdgeInsets.fromLTRB(20.0, 275.0, 20.0, 20.0),
+              child: Text(
+               'Welcome to Diabetic inMe!',
+                textAlign: TextAlign.center,
+
+               style: TextStyle(
+                 fontWeight: FontWeight.bold,
+                 fontSize: 20.0,
+                 letterSpacing: 2.0,
+                 color: Colors.grey[800],
+              ),
+             ),
             ),
           ),
+          Center(
+            child: ElevatedButton(
+              child: Text('See my log data'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ThirdRoute()),
+                );
+              },
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -55,7 +75,7 @@ class SecondRoute extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
               child: Text(
-                  'Input your BGL',
+                  'Blood Glucose Level',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20.0,
@@ -72,7 +92,7 @@ class SecondRoute extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 0.0),
               child: Text(
-                  'Input your Carbohydrate intake',
+                  'Carbohydrate intake',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20.0,
@@ -88,7 +108,7 @@ class SecondRoute extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 0.0),
               child: Text(
-                  'Input your Medication Intake',
+                  'Medication Intake & Type',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20.0,
@@ -102,6 +122,26 @@ class SecondRoute extends StatelessWidget {
         ],
       ),
 
+    );
+  }
+}
+
+class ThirdRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Data"),
+        backgroundColor: Colors.blue[900],
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text('Go back!'),
+        ),
+      ),
     );
   }
 }
